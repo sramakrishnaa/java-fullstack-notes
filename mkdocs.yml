@@ -1,0 +1,62 @@
+site_name: Java Fullstack
+site_author: Ramakrishna Sangamreddy
+
+repo_url: https://github.com/sramakrishnaa/java-spring-handbook
+repo_name: sramakrishnaa/java-spring-handbook
+
+theme:
+  name: material
+  icon:
+    # logo: material/language-java
+    logo: simple/springboot
+    repo: fontawesome/brands/github
+
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sramakrishnaa
+      name: sramakrishnaa
+  font:
+    text: Roboto
+    code: JetBrains Mono
+
+copyright: © 2026 Ramakrishna Sangamreddy
