@@ -1,13 +1,16 @@
-site_name: Java Fullstack
+site_name: Java Fullstack Handbook
 site_author: Ramakrishna Sangamreddy
+site_description: Java, Spring Boot, System Design and Fullstack interview notes
+site_url: https://sramakrishnaa.github.io/java-spring-handbook/
 
-repo_url: https://github.com/sramakrishnaa/java-spring-handbook
 repo_name: sramakrishnaa/java-spring-handbook
+repo_url: https://github.com/sramakrishnaa/java-spring-handbook
+edit_uri: edit/main/docs/
 
 theme:
   name: material
+
   icon:
-    # logo: material/language-java
     logo: simple/springboot
     repo: fontawesome/brands/github
 
@@ -19,44 +22,83 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
+    - navigation.expand
     - navigation.top
+    - header.autohide
     - search.suggest
     - search.highlight
     - content.code.copy
     - content.action.edit
+    - content.tabs.link
 
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/brightness-auto
-        name: Switch to light mode
+        name: Switch theme
+
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+      primary: indigo
+      accent: indigo
+
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to system preference
+      primary: indigo
+      accent: indigo
 
 plugins:
   - search
+  - tags
+  - minify:
+      minify_html: true
 
 markdown_extensions:
   - admonition
+  - tables
+  - toc:
+      permalink: true
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.tasklist
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/sramakrishnaa
-      name: sramakrishnaa
+      name: GitHub
+
   font:
     text: Roboto
     code: JetBrains Mono
 
 copyright: © 2026 Ramakrishna Sangamreddy
+
+nav:
+  - Home: index.md
+
+  - Java:
+      - Basics: java/basics.md
+      - OOP: java/oops.md
+      - Collections: java/collections.md
+
+  - Spring Boot:
+      - Intro: springboot/intro.md
+      - Security: springboot/security.md
+      - JWT: springboot/jwt.md
+
+  - Database:
+      - SQL: database/sql.md
+      - Indexing: database/indexing.md
+
+  - System Design:
+      - Concepts: system-design/concepts.md
+      - HLD: system-design/hld.md
+
+  - DevOps:
+      - Git: devops/git.md
+      - Docker: devops/docker.md
+
+  - Cheatsheets: cheatsheets.md
