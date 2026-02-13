@@ -2,22 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://sramakrishnaa.github.io/java-fullstack-notes/</loc>
-         <lastmod>2026-02-11</lastmod>
+         <lastmod>2026-02-13</lastmod>
     </url>
     <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/01-fundamentals/01-introduction/</loc>
-         <lastmod>2026-02-11</lastmod>
-    </url>
-    <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/01-fundamentals/02-data-types/</loc>
-         <lastmod>2026-02-11</lastmod>
-    </url>
-    <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/01-fundamentals/04-control-statements/</loc>
-         <lastmod>2026-02-11</lastmod>
-    </url>
-    <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/02-oops/01-classes-objects/</loc>
-         <lastmod>2026-02-11</lastmod>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/fundamentals/control-statements/</loc>
+         <lastmod>2026-02-13</lastmod>
     </url>
 </urlset>
