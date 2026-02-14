@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 site_name: "Java FS"
 site_description: "Comprehensive Java Full Stack interview-preparation notes (Spring Boot + Angular)"
 site_author: "Ramakrishna Sangamreddy"
@@ -117,6 +116,3 @@ validation:
 
 site_dir: "site"
 docs_dir: "docs"
-=======
-site_name: Java Fullstack Handbook
->>>>>>> b78412952968afc056e4cf101b613455f8025d84
