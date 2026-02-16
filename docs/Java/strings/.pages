@@ -1,0 +1,6 @@
+title : Strings
+
+nav:
+    - Basics: basics.md
+    - Immutability : immutability.md
+    - == VS equlas() : string-comparison.md
