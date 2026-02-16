@@ -3,5 +3,5 @@ site/
 __pycache__/
 *.pyc
 .DS_Store
-.vscode/
+.vscode
 known_words.txt
