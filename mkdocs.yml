@@ -40,6 +40,8 @@ theme:
     - navigation.instant.progress
     - navigation.tracking
     - navigation.tabs
+    - navigation.sections
+    # - navigation.expand
     - navigation.indexes
     - navigation.top
     - navigation.path
@@ -47,12 +49,12 @@ theme:
     - toc.follow
     - content.tabs.link
     - content.code.copy
-    - search.suggest
-    - search.highlight
-    - search.share
     - content.code.annotate
     - content.action.edit
     - content.action.view
+    - search.suggest
+    - search.highlight
+    - search.share
 
   font:
     text: Roboto
@@ -62,15 +64,19 @@ plugins:
   - search:
       lang: en
       separator: '[\s\-\.]+'
-  - minify:
-      minify_html: true
   - awesome-pages
   - redirects
   - glightbox
+  - section-index
+  # - git-revision-date-localized:
+  #     fallback_to_build_date: true
+  #     enable_creation_date: true
   - mermaid2:
       javascript: "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs"
       arguments:
         startOnLoad: false
+  - minify:
+      minify_html: true
 
 markdown_extensions:
   - admonition
@@ -78,15 +84,14 @@ markdown_extensions:
   - footnotes
   - attr_list
   - def_list
-  - admonition
-  - tables
-  - footnotes
-  - attr_list
-  - def_list
+
   - pymdownx.highlight:
+      use_pygments: true
+      guess_lang: false
       anchor_linenums: true
       line_spans: "__span"
       pygments_lang_class: true
+
   - pymdownx.inlinehilite
   - pymdownx.details
   - pymdownx.tabbed:
@@ -96,6 +101,7 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.emoji
   - pymdownx.snippets
+
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -106,6 +112,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: "https://github.com/sramakrishnaa"
+  # generator: false
 
 validation:
   nav:
@@ -114,5 +121,5 @@ validation:
   links:
     not_found: warn
 
-site_dir: "site"
 docs_dir: "docs"
+site_dir: "site"
