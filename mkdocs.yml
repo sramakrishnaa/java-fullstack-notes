@@ -40,12 +40,11 @@ theme:
     - navigation.instant.progress
     - navigation.tracking
     - navigation.tabs
-    - navigation.sections
+    - navigation.tabs.sticky
     # - navigation.expand
     - navigation.indexes
     - navigation.top
     - navigation.path
-    - navigation.prune
     - toc.follow
     - content.tabs.link
     - content.code.copy
