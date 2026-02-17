@@ -11,13 +11,14 @@ Java provides **three main categories** of control flow statements:
 
 ---
 
+
 ## **Decision-Making Statements**
-Decision-Making Statements control which code blocks execute based on boolean conditions. These include `if`, `if-else`, `if-else-if` ladder, `nested if`, `switch`, and the `ternary operator`.
+Decision-making statements evaluate conditions and execute code blocks based on whether those conditions are true or false. These include `if`, `if-else`, `if-else-if` ladder, `nested if`, `switch`, and the `ternary operator`.
 
----
 
-### `if` Statement
-The simplest decision-making statement. It executes a block of code only when a specified condition evaluates to true.
+
+### if Statement
+It is simplest decision-making statement. The `if` statement executes a block of code only if a specified condition is true.
 
 **Syntax:**
 ```java
@@ -28,7 +29,7 @@ if (condition) {
 
 **Flow Chart:**
 ```mermaid
-%%{init: {'themeVariables': { 'fontSize': '10px' }} }%%
+%%{init: {'themeVariables': { 'fontSize': '12px' }} }%%
 
 flowchart TD
     A([Start]) --> B{Condition?}
@@ -40,6 +41,7 @@ flowchart TD
 **Example:**
 ```java
 int age = 18;
+
 if (age >= 18) {
     System.out.println("You are eligible to vote");
 }
@@ -47,14 +49,16 @@ if (age >= 18) {
 
 **Key Points:**
 
- - The condition must be a boolean expression
- - Curly braces are optional for single statements but recommended for readability
- - If condition is false, the code block is skipped entirely
+- The condition must be a boolean expression
+- Curly braces `{}` are optional for single statements but recommended for clarity
+- If condition is false, the code block is skipped entirely. The code block executes only if the condition is true
+
 
 ---
 
-### `if-else` Statement
-Provides an alternative path of execution when the condition is false.
+
+### if-else Statement
+The `if-else` statement provides an alternative path of execution when the condition is false.
 
 **Syntax:**
 ```java
@@ -67,7 +71,7 @@ if (condition) {
 
 **Flow Chart:**
 ```mermaid
-%%{init: {'themeVariables': { 'fontSize': '10px' }} }%%
+%%{init: {'themeVariables': { 'fontSize': '12px' }} }%%
 
 flowchart TD
     A([Start]) --> B{Condition?}
@@ -79,16 +83,25 @@ flowchart TD
 
 **Example:**
 ```java
-int number = 15;
-if (number % 2 == 0) {
-    System.out.println("Even number");
+int temperature = 25;
+
+if (temperature > 30) {
+    System.out.println("It's hot outside.");
 } else {
-    System.out.println("Odd number");
+    System.out.println("The weather is pleasant.");
 }
 ```
 
-### `if-else-if` Ladder
-Used when you need to test multiple conditions sequentially. The first condition that evaluates to true will execute its corresponding block, and the rest will be skipped.
+**Key Points**
+
+- Exactly one block (either if or else) will execute
+
+
+---
+
+
+### if-else-if Ladder
+The `if-else-if` ladder tests multiple conditions sequentially. The first condition that evaluates to true will execute its corresponding block, and the rest will be skipped.
 
 **Syntax:**
 ```java
@@ -109,7 +122,7 @@ else {
 
 **Flow Chart:**
 ```mermaid
-%%{init: {'themeVariables': { 'fontSize': '10px' }} }%%
+%%{init: {'themeVariables': { 'fontSize': '12px' }} }%%
 
 flowchart TD
     A([Start]) --> B{Condition 1?}
@@ -145,8 +158,20 @@ if (score >= 90) {
 }
 ```
 
-### `Nested if` Statements
-An if statement inside another if statement, used for complex decision-making scenarios.
+**Key Points:**
+
+- Conditions are evaluated from top to bottom   
+- Only the first true condition's block executes
+- The final `else` is optional but provides a default case
+- Execution stops after the first match
+
+
+---
+
+
+
+### Nested if Statements
+Nested `if` statements are `if` statements inside other `if` statements, allowing for complex decision-making logic.
 
 **Syntax:**
 ```java
@@ -195,29 +220,45 @@ if (age >= 18) {
 }
 ```
 
-### `switch` Statement
-Provides a cleaner alternative to multiple if-else-if statements when comparing a single variable against multiple constant values.
+
+**Key Points:**
+
+- C an nest to any depth, but deep nesting reduces readability
+- Each `if` can have its own `else` clause
+- Consider refactoring deeply nested conditions using logical operators
+
+
+---
+
+
+
+
+### switch Statement
+The `switch` statement allows multi-way branching based on the value of an expression. It's an alternative to long `if-else-if` ladders.
 
 **Syntax:**
 ```java
 switch (expression) {
     case value1:
-        // code block
+        // code for value1
         break;
     case value2:
-        // code block
+        // code for value2
+        break;
+    case value3:
+        // code for value3
         break;
     .
     .
     .
     default:
-        // code block
+        // code if no case matches
 }
 ```
 
 **Flow Chart:**
 ```mermaid
-%%{init: {'themeVariables': { 'fontSize': '10px' }} }%%
+%%{init: {'themeVariables': { 'fontSize': '12px' }} }%%
 
 flowchart TD
     A([Start]) --> B[Evaluate Expression]
@@ -268,23 +309,14 @@ switch (day) {
 }
 ```
   
-**Advanced switch Features (Java 12+):**  
-Java 12 introduced switch expressions with arrow syntax:
-```java
-String day = switch (dayNumber) {
-    case 1 -> "Monday";
-    case 2 -> "Tuesday";
-    case 3 -> "Wednesday";
-    case 4 -> "Thursday";
-    case 5 -> "Friday";
-    case 6, 7 -> "Weekend";
-    default -> "Invalid";
-};
-```
 
-**Important switch Concepts:**
 
-- Switch works with `byte`, `short`, `int`, `char`, `String` (Java 7+), and `enum` types
+**Key Points:**  
+
+- Switch works with 
+    - `byte`, `short`, `int`, `char`
+    - `Byte`, `Short`, `Character`, `Integer` (wrapper classes)
+    - `String` (Java 7+) and `enum` types
 - The `break` statement is crucial to prevent fall-through behavior
 - Fall-through occurs when `break` is omitted, causing execution to continue into the next case
 - The `default` case is optional but recommended for handling unexpected values
@@ -308,9 +340,71 @@ switch (month) {
         days = 0;
 }
 ```
+<br>
+
+#### Advanced switch Features (Java 12+):  
+Switch expressions are an enhanced form of switch introduced in Java 12 (preview) and made standard in Java 14. They can return values and use arrow syntax.
+
+**Syntax:**
+```java
+result = switch (expression) {
+    case value1 -> result1;
+    case value2 -> result2;
+    case value3 -> result3;
+    default -> defaultResult;
+};
+```
+
+**Example:**
+```java
+int dayOfWeek = 3;
+
+String dayType = switch (dayOfWeek) {
+    case 1, 2, 3, 4, 5 -> "Weekday";
+    case 6, 7 -> "Weekend";
+    default -> "Invalid day";
+};
+
+System.out.println(dayType);
+```
+
+
+#### Using yield for Complex Cases:
+```java
+int score = 85;
+
+String grade = switch (score / 10) {
+    case 10, 9 -> "A";
+    case 8 -> "B";
+    case 7 -> "C";
+    case 6 -> "D";
+    default -> {
+        if (score < 0 || score > 100) {
+            yield "Invalid score";
+        }
+        yield "F";
+    }
+};
+
+System.out.println("Grade: " + grade);
+```
+
+**Key Points:**
+
+- No fall-through; each case is independent
+- Can return values directly
+- Multiple values can be combined with commas
+- Use `yield` for complex expressions in blocks
+- More concise and less error-prone than traditional switch
+
+
+
+---
+
+
 
 ### Ternary Operator
-A concise way to write simple if-else statements in a single line.
+A concise way to write simple `if-else` statements in a single line.
 
 **Syntax:**
 ```java
@@ -328,13 +422,19 @@ int x = 5;
 String result = (x > 0) ? "Positive" : (x < 0) ? "Negative" : "Zero";
 ```
 
+
+
+
 ---
 
-## **Looping Statements**
-Looping Statements execute code blocks repeatedly based on conditions. Java provides `for` loop, `while` loop, `do-while` loop, and enhanced `for-each` loop.
 
-###  `for` Loop
-Used when you know in advance how many times you want to execute a block of code.
+
+
+## **Looping Statements**
+Loops allow you to execute a block of code repeatedly based on a condition. Java provides `for` loop, `while` loop, `do-while` loop, and enhanced `for-each` loop.
+
+###  for Loop
+The `for` loop is used when you know in advance how many times you want to execute a statement or block.
 
 **Syntax:**
 ```java
@@ -345,7 +445,7 @@ for (initialization; condition; update) {
 
 **Flow Chart:**
 ```mermaid
-%%{init: {'themeVariables': { 'fontSize': '10px' }} }%%
+%%{init: {'themeVariables': { 'fontSize': '12px' }} }%%
 
 flowchart TD
     A([Start]) --> B[Initialization]
@@ -358,6 +458,22 @@ flowchart TD
     C -- False --> F([End])
 ```
 
+**Example:**
+```java
+// Print numbers 1 to 10
+for (int i = 1; i <= 10; i++) {
+    System.out.println(i);
+}
+```
+
+
+**Components:**
+
+1. **Initialization**: Executed once at the start (e.g., int i = 1)
+2. **Condition**: Checked before each iteration (e.g., i <= 10)
+3. **Update**: Executed after each iteration (e.g., i++)
+
+
 **Execution Flow:**
 
 1. Initialization executes once at the beginning
@@ -365,17 +481,34 @@ flowchart TD
 3. If condition is true, loop body executes
 4. Update statement executes after each iteration
 5. Process repeats from step 2
+   
 
-**Example:**
+
+**Multiple Variables:**
 ```java
-for (int i = 0; i < 5; i++) {
-    System.out.println("Iteration: " + i);
+for (int i = 0, j = 10; i < j; i++, j--) {
+    System.out.println("i: " + i + ", j: " + j);
 }
 ```
 
 
-### `while` Loop
-Executes a block of code as long as a specified condition remains true. Best used when the number of iterations is unknown.
+**Infinite Loop:**
+```java
+for (;;) {
+    // This loop runs forever
+    // Use break to exit
+}
+```
+
+
+
+---
+
+
+
+
+### while Loop
+The `while` loop executes a block of code as long as a specified condition is true. It's a pre-test loop (condition checked before execution).
 
 **Syntax:**
 ```java
@@ -386,7 +519,7 @@ while (condition) {
 
 **Flow Chart:**
 ```mermaid
-%%{init: {'themeVariables': { 'fontSize': '10px' }} }%%
+%%{init: {'themeVariables': { 'fontSize': '12px' }} }%%
 
 flowchart TD
     A([Start]) --> B{Condition?}
@@ -415,16 +548,21 @@ while (number != -1) {
 }
 ```
 
-**Important Considerations:**
+**Key Points:**
 
-- The condition is checked before the loop body executes
+- Condition is evaluated before each iteration
 - If the condition is initially false, the loop body never executes
 - Must ensure the condition eventually becomes false to avoid infinite loops
+- Useful when the number of iterations is unknown
 
 
 
-### `do-while` Loop
-Similar to while loop but guarantees at least one execution because the condition is checked after the loop body.
+---
+
+
+
+### do-while Loop
+The `do-while` loop is similar to `while`, but it's a post-test loop (condition checked after execution). It guarantees at least one execution.
 
 **Syntax:**
 ```java
@@ -435,7 +573,7 @@ do {
 
 **Flow Chart**
 ```mermaid
-%%{init: {'themeVariables': { 'fontSize': '10px' }} }%%
+%%{init: {'themeVariables': { 'fontSize': '12px' }} }%%
 
 flowchart TD
     A([Start]) --> B[Execute Loop Body]
@@ -447,31 +585,29 @@ flowchart TD
 
 **Example:**
 ```java
-int number;
-Scanner scanner = new Scanner(System.in);
-do {
-    System.out.print("Enter a positive number: ");
-    number = scanner.nextInt();
-} while (number <= 0);
+int count = 1;
 
-// Menu-driven program example
-int choice;
 do {
-    System.out.println("1. Option A");
-    System.out.println("2. Option B");
-    System.out.println("3. Exit");
-    choice = scanner.nextInt();
-    // process choice
-} while (choice != 3);
+    System.out.println("Count: " + count);
+    count++;
+} while (count <= 5);
 ```
 
-**Key Difference from `while`:**
+**Key Points:**
 
 - `do-while` executes at least once regardless of condition
+- Condition checked after the loop body
 - `while` may not execute at all if condition is initially false
+- Useful for input validation and menu-driven programs
+
+
+---
+
+
+
 
 ### Enhanced for Loop (`for-each`)
-Introduced in Java 5, this loop simplifies iteration over arrays and collections.
+The enhanced `for` loop (introduced in Java 5) provides a simpler way to iterate over arrays and collections.
 
 **Syntax:**
 ```java
@@ -480,38 +616,85 @@ for (dataType variable : arrayOrCollection) {
 }
 ```
 
-**Example:**
+**Array Example::**
 ```java
 int[] numbers = {1, 2, 3, 4, 5};
+
 for (int num : numbers) {
     System.out.println(num);
 }
+```
 
-// With collections
-List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
-for (String name : names) {
-    System.out.println(name);
+
+**Collection Example:**
+```java
+List<String> fruits = Arrays.asList("Apple", "Banana", "Cherry");
+
+for (String fruit : fruits) {
+    System.out.println(fruit);
 }
 ```
 
+
+**Key Points:**
+
+- Primarily used for read-only traversal
+- Cannot modify the structure of an array or collection (no add/remove operations)
+- Cleaner and less error-prone than a traditional `for` loop
+- No direct access to the index
+- Works with:
+    - Arrays
+    - Any class implementing `Iterable`
+
 **Limitations:**
 
-- Cannot modify the array elements (modifications won't affect the original array)
-- Cannot track the index while iterating
-- Can only iterate forward in single steps
-- Cannot iterate over multiple arrays simultaneously
+- Cannot modify **primitive array elements** (the loop variable is a copy; reassignment does not affect the original array)
+- Cannot directly track the index during iteration
+- Can only iterate forward in single-step increments
+- Cannot iterate over multiple arrays/collections simultaneously
+- Cannot safely remove elements from a collection during iteration (may cause `ConcurrentModificationException`)
+
+
+
 
 ---
 
-## **Jump Statements**
-Jump Statements alter the normal flow of control by transferring execution to another part of the program. These include `break`, `continue`, and `return`.
 
-### `break` Statement  
-Terminates the loop or switch statement and transfers control to the statement immediately following the loop or switch.
+### Nested Loops
+Nested loops are loops inside other loops. The inner loop completes all its iterations for each iteration of the outer loop.
+
+**Example:**
+```java
+for (int i = 1; i <= 10; i++) {
+    for (int j = 1; j <= 10; j++) {
+        System.out.printf("%4d", i * j);
+    }
+    System.out.println();
+}
+```
+
+**Key Points:**
+
+- Time complexity multiplies (O(n²) for two nested loops)
+- Useful for multi-dimensional data structures
+- Can nest any type of loop (`for`, `while`, `do-while`)
+
+
+---
+
+
+
+
+## **Jump Statements**
+Jump statements transfer control to another part of the program. These include `break`, `continue`, and `return`.
+
+### break Statement  
+The `break` statement terminates the current loop or switch statement and transfers control to the statement immediately following the loop/switch.
+
 
 **Flow Chart:**
 ```mermaid
-%%{init: {'themeVariables': { 'fontSize': '10px' }} }%%
+%%{init: {'themeVariables': { 'fontSize': '12px' }} }%%
 
 flowchart TB
     A([Start]) --> B{Loop Condition?}
@@ -524,36 +707,45 @@ flowchart TB
     B -- False --> F
 ```
 
-**Usage Scenarios:**
+**In Loops:**
 ```java
-// Breaking out of a loop
+// Find first even number
 for (int i = 1; i <= 10; i++) {
-    if (i == 5) {
-        break;  // exits loop when i is 5
+    if (i % 2 == 0) {
+        System.out.println("First even number: " + i);
+        break; // Exit loop
     }
-    System.out.println(i);
 }
-// Output: 1 2 3 4
+```
 
-// Breaking from nested loops using labels
-outerLoop:
+**In switch:**
+```java
+int day = 3;
+
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break; // Exit switch
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday");
+        break; // Exit switch
+    default:
+        System.out.println("Other day");
+}
+```
+
+**In Nested Loops:**
+```java
+// Break only exits the innermost loop
 for (int i = 1; i <= 3; i++) {
     for (int j = 1; j <= 3; j++) {
-        if (i == 2 && j == 2) {
-            break outerLoop;  // breaks from outer loop
+        if (j == 2) {
+            break; // Only exits inner loop
         }
-        System.out.println(i + " " + j);
-    }
-}
-
-// Searching in an array
-int[] numbers = {5, 2, 8, 1, 9};
-int target = 8;
-boolean found = false;
-for (int num : numbers) {
-    if (num == target) {
-        found = true;
-        break;
+        System.out.println("i: " + i + ", j: " + j);
     }
 }
 ```
@@ -562,12 +754,16 @@ for (int num : numbers) {
 - Control moves outside the loop.
 
 
-### `continue` Statement
-Skips the current iteration of a loop and proceeds to the next iteration.
+---
+
+
+
+### continue Statement
+The `continue` statement skips the current iteration of a loop and proceeds to the next iteration.
 
 **Flow Chart:**
 ```mermaid
-%%{init: {'themeVariables': { 'fontSize': '10px' }} }%%
+%%{init: {'themeVariables': { 'fontSize': '12px' }} }%%
 flowchart TD
     A([Start]) --> B{Loop Condition?}
     
@@ -581,33 +777,52 @@ flowchart TD
 
 **Example:**
 ```java
-// Skip even numbers
+// Print odd numbers from 1 to 10
 for (int i = 1; i <= 10; i++) {
     if (i % 2 == 0) {
-        continue;  // skips even numbers
+        continue; // Skip even numbers
     }
     System.out.println(i);
 }
-// Output: 1 3 5 7 9
+```
 
-// With labels in nested loops
-outerLoop:
-for (int i = 1; i <= 3; i++) {
-    for (int j = 1; j <= 3; j++) {
-        if (j == 2) {
-            continue outerLoop;  // continues outer loop
-        }
-        System.out.println(i + " " + j);
+**In while Loop:**
+```java
+int i = 0;
+
+while (i < 10) {
+    i++;
+    if (i % 2 == 0) {
+        continue; // Skip even numbers
     }
+    System.out.println(i);
 }
 ```
 
+
+**Key Points:**
+
 - If `continue` condition is true → skip remaining statements
 - Control jumps to next iteration
+- **In `for` loop**: jumps to the update statement
+- **In `while`/`do-while`**: jumps to the condition check
 - Loop does NOT terminate
+- Only affects the innermost loop in nested loops
 
-### `return` Statement
-Exits from the current method and optionally returns a value to the calling method.
+
+
+---
+
+
+
+### return Statement
+The `return` statement exits from the current method and optionally returns a value to the caller.
+
+**Syntax:**
+```java
+return; // For void methods
+return value; // For methods returning a value
+```
 
 **Flow Chart:**
 ```mermaid
@@ -624,35 +839,189 @@ flowchart TD
 
 **Example:**
 ```java
-public int findMax(int[] array) {
-    if (array == null || array.length == 0) {
-        return -1;  // early return for invalid input
+public int findMax(int a, int b) {
+    if (a > b) {
+        return a; // Exit method and return a
+    } else {
+        return b; // Exit method and return b
     }
-    
-    int max = array[0];
-    for (int i = 1; i < array.length; i++) {
-        if (array[i] > max) {
-            max = array[i];
-        }
-    }
-    return max;
 }
 
-public void printPositiveNumbers(int[] numbers) {
-    for (int num : numbers) {
-        if (num < 0) {
-            return;  // exits method immediately
-        }
-        System.out.println(num);
+public void printMessage(String message) {
+    if (message == null) {
+        return; // Exit method early
     }
+    System.out.println(message);
 }
 ```
+
+**Key Points:**
 
 - `return` immediately exits the method
 - Control goes back to the caller
 - No further code executes in that method
+- Can be used for early termination
+- Must return appropriate type for non-void methods
 
 ---
+
+
+### Labeled break and continue
+Labels allow you to break out of or continue with outer loops in nested loop structures.
+
+**Syntax:**
+```java
+labelName:
+for (...) {
+    for (...) {
+        break labelName; // Breaks out of labeled loop
+        continue labelName; // Continues with labeled loop
+    }
+}
+```
+
+**Labeled break Example:**
+```java
+outerLoop:
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 3; j++) {
+        if (i == 2 && j == 2) {
+            System.out.println("Breaking out of outer loop");
+            break outerLoop; // Exits both loops
+        }
+        System.out.println("i: " + i + ", j: " + j);
+    }
+}
+System.out.println("Outside loops");
+```
+
+**Output:**
+```java
+i: 1, j: 1
+i: 1, j: 2
+i: 1, j: 3
+i: 2, j: 1
+Breaking out of outer loop
+Outside loops
+```
+
+
+**Labeled continue Example:**
+```java
+outerLoop:
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 3; j++) {
+        if (j == 2) {
+            continue outerLoop; // Skip to next iteration of outer loop
+        }
+        System.out.println("i: " + i + ", j: " + j);
+    }
+}
+```
+
+
+**Output:**
+```java
+i: 1, j: 1
+i: 2, j: 1
+i: 3, j: 1
+```
+
+**Key Points:**
+
+- Use sparingly; can reduce code readability
+- Useful for complex nested loop scenarios
+- Label must be immediately before the loop
+- Provides better control than using flags
+
+
+---
+
+## **Common Mistakes**
+
+1. **Forgetting break** in switch statements leads to fall-through behavior:
+```java
+// Bug: will print multiple days
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+    case 2:
+        System.out.println("Tuesday");  // executes even when day is 1
+}
+```
+2. **Semicolon After if/while/for**
+```java
+if (x > 10); // Semicolon here!
+{
+    System.out.println("x is greater than 10");
+}
+// This block always executes
+```
+
+3. **Using assignment instead of comparison:** 
+```java
+if (x = 5) { }  // Compilation error in Java (good!)
+```
+
+4. **Off-by-one errors** in loops:
+```java
+// Bug: misses last element
+for (int i = 0; i < array.length - 1; i++) { }
+
+// Correct
+for (int i = 0; i < array.length; i++) { }
+
+```
+
+5. **Modifying loop variables incorrectly:**
+```java
+// Bug: infinite loop
+for (int i = 0; i < 10; i--) { }
+
+int i = 0;
+while (i < 10) {
+    System.out.println(i);
+    // Forgot to increment i
+}
+```
+
+6. **Wrong Loop Choice**
+```java
+String[] names = {"Alice", "Bob", "Charlie"};
+
+for (String name : names) {
+    // Can't access index here
+}
+```
+
+7. **Modifying Collection During Enhanced for Loop**
+```java
+List<String> list = new ArrayList<>(Arrays.asList("A", "B", "C"));
+
+for (String item : list) {
+    if (item.equals("B")) {
+        list.remove(item); // ConcurrentModificationException
+    }
+}
+```
+
+8. **Floating-Point Comparison**
+```java
+double a = 0.1 + 0.2;
+if (a == 0.3) { // May not work due to precision issues
+    System.out.println("Equal");
+}
+```
+
+9. **Comparing strings** with == instead of equals():
+```java
+// Wrong
+if (str == "hello") { }
+
+// Correct
+if (str.equals("hello")) { }
+```
+
 
 ## **Best Practices**
 
@@ -671,43 +1040,8 @@ if (status == ACTIVE) { }
 5. **Be cautious with infinite loops** and always ensure a proper exit condition.
    
 
-## **Common Pitfalls**
 
-1. **Forgetting break** in switch statements leads to fall-through behavior:
-```java
-// Bug: will print multiple days
-switch (day) {
-    case 1:
-        System.out.println("Monday");
-    case 2:
-        System.out.println("Tuesday");  // executes even when day is 1
-}
-```
-2. **Using assignment instead of comparison:** 
-```java
-if (x = 5) { }  // Compilation error in Java (good!)
-```
-3. **Off-by-one errors** in loops:
-```java
-// Bug: misses last element
-for (int i = 0; i < array.length - 1; i++) { }
 
-// Correct
-for (int i = 0; i < array.length; i++) { }
-```
-4. **Modifying loop variables incorrectly:**
-```java
-// Bug: infinite loop
-for (int i = 0; i < 10; i--) { }
-```
-5. **Comparing strings** with == instead of equals():
-```java
-// Wrong
-if (str == "hello") { }
-
-// Correct
-if (str.equals("hello")) { }
-```
 
 ## **Performance Considerations**
 The choice between different control structures can impact performance. `for-each` loops are generally as fast as traditional `for` loops. `Switch` statements with many cases can be optimized by the JVM into jump tables, making them faster than equivalent `if-else` chains for certain scenarios.

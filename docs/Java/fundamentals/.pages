@@ -2,4 +2,4 @@ title: Fundamentals
 
 nav:
   - index.md
-  - Control Statements : control-statements.md
+  - Control Flow Statements : control-statements.md
