@@ -1,43 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/history-and-evolution-of-java.html</loc>
+         <lastmod>2026-04-14</lastmod>
     </url>
     <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/java/</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/control-flow-statements/common-mistakes-and-best-practices.html</loc>
+         <lastmod>2026-04-14</lastmod>
     </url>
     <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/java/fundamentals/</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/control-flow-statements/decision-making-statements.html</loc>
+         <lastmod>2026-04-14</lastmod>
     </url>
     <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/java/fundamentals/control-statements/</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/control-flow-statements/introduction.html</loc>
+         <lastmod>2026-04-14</lastmod>
     </url>
     <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/java/oops/</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/control-flow-statements/jump-statements.html</loc>
+         <lastmod>2026-04-14</lastmod>
     </url>
     <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/java/oops/classes-and-objects/</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/control-flow-statements/looping-statements.html</loc>
+         <lastmod>2026-04-14</lastmod>
     </url>
     <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/java/strings/basics/</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/data-types-and-variables/strongly-typed.html</loc>
+         <lastmod>2026-04-14</lastmod>
     </url>
     <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/java/strings/fundamentals/</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/data-types-and-variables/primitive-types/boolean-type.html</loc>
+         <lastmod>2026-04-14</lastmod>
     </url>
     <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/java/strings/immutability/</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/data-types-and-variables/primitive-types/character-types.html</loc>
+         <lastmod>2026-04-14</lastmod>
     </url>
     <url>
-         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/java/strings/string-comparison/</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/data-types-and-variables/primitive-types/floating-point-types.html</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/data-types-and-variables/primitive-types/integer-types.html</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/data-types-and-variables/primitive-types/intro.html</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/strings/basics.html</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/strings/immutability.html</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://sramakrishnaa.github.io/java-fullstack-notes/Java/strings/string-comparison.html</loc>
+         <lastmod>2026-04-14</lastmod>
     </url>
 </urlset>
