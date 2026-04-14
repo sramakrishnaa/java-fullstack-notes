@@ -1,7 +1,6 @@
-title: Java
+title : Java
 
 nav:
-  - index.md
-  - fundamentals
-  - strings
-  - oops
+    - history-and-evolution-of-java.md
+    - data-types-and-variables
+    - control-flow-statements

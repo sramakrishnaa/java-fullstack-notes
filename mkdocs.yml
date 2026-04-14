@@ -1,4 +1,4 @@
-site_name: "Java FS"
+site_name: "Java FS Notes"
 site_description: "Comprehensive Java Full Stack interview-preparation notes (Spring Boot + Angular)"
 site_author: "Ramakrishna Sangamreddy"
 site_url: "https://sramakrishnaa.github.io/java-fullstack-notes/"
@@ -7,16 +7,19 @@ repo_url: "https://github.com/sramakrishnaa/java-fullstack-notes"
 repo_name: "sramakrishnaa/java-fullstack-notes"
 edit_uri: "edit/main/docs/"
 
-use_directory_urls: true
+use_directory_urls: false
 strict: true
 
 theme:
   name: material
   language: en
+  font: false
 
   icon:
     logo: material/layers-triple
-    repo: fontawesome/brands/github
+    repo: material/git
+    edit: material/pencil
+    view: material/eye
   favicon: assets/images/layers-triple.svg
 
   palette:
@@ -26,100 +29,117 @@ theme:
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
 
   features:
+    # Navigation
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.instant.progress
     - navigation.tracking
-    - navigation.tabs
-    - navigation.tabs.sticky
-    # - navigation.expand
     - navigation.indexes
-    - navigation.top
+    - navigation.tabs
     - navigation.path
+    - navigation.top
+    - navigation.footer
+
+    # TOC
     - toc.follow
-    - content.tabs.link
-    - content.code.copy
-    - content.code.annotate
-    - content.action.edit
-    - content.action.view
+
+    # Search
     - search.suggest
     - search.highlight
     - search.share
 
-  font:
-    text: Roboto
-    code: "JetBrains Mono"
+    # Content
+    - content.code.copy
+    - content.code.select
+    - content.tooltips
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.tabs.link
 
 plugins:
   - search:
       lang: en
-      separator: '[\s\-\.]+'
-  - awesome-pages
-  - redirects
-  - glightbox
-  - section-index
-  # - git-revision-date-localized:
-  #     fallback_to_build_date: true
-  #     enable_creation_date: true
-  - mermaid2:
-      javascript: "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs"
-      arguments:
-        startOnLoad: false
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+      
+  - tags
+
   - minify:
       minify_html: true
+
+  - awesome-pages:
+      collapse_single_pages: false
+      strict: false
+
+  - glightbox
+
+  # - panzoom:
+  #     mermaid: true
+  #     images: true
+  #     key: "alt"
+  #     always_show_hint: false
+
 
 markdown_extensions:
   - admonition
   - tables
-  - footnotes
-  - attr_list
   - def_list
 
-  - pymdownx.highlight:
-      use_pygments: true
-      guess_lang: false
-      anchor_linenums: true
-      line_spans: "__span"
-      pygments_lang_class: true
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section
+      toc_depth: 3
+      title: "On this page"
 
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      auto_title: true
   - pymdownx.inlinehilite
-  - pymdownx.details
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.keys
-  - pymdownx.emoji
-  - pymdownx.snippets
+  - pymdownx.mark
+  - pymdownx.caret
+
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
 
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:mermaid2.fence_mermaid_custom
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - pymdownx.tabbed:
+      alternate_style: true
+      
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+
 
 extra:
   social:
-    - icon: fontawesome/brands/github
-      link: "https://github.com/sramakrishnaa"
-  # generator: false
+    - icon: material/github
+      link: https://github.com/sramakrishnaa
+      name: GitHub Profile
 
-validation:
-  nav:
-    omitted_files: info
-    not_found: warn
-  links:
-    not_found: warn
+    - icon: material/linkedin
+      link: https://linkedin.com/in/sramakrishnaa
+      name: LinkedIn Profile
 
-docs_dir: "docs"
-site_dir: "site"
+copyright: Copyright © 2026 sramakrishnaa

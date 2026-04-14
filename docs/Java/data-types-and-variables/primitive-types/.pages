@@ -1,0 +1,7 @@
+title: Primitive Data Types
+nav:
+    - intro.md
+    - integer-types.md
+    - floating-point-types.md
+    - character-types.md
+    - boolean-type.md
